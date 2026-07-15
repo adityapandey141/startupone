@@ -2,9 +2,27 @@
 
 import { MessageCircle, Phone, MapPin, Mail, Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
 
-const quickLinks = ['Home', 'About Us', 'Success Stories', 'Blog', 'Careers', 'Contact'];
-const serviceLinks = ['Business Loan', 'MSME Funding', 'Startup Seed Fund', 'CGTMSE', 'PMEGP', 'DPIIT Registration'];
-const resourceLinks = ['Funding Calculator', 'Eligibility Checker', 'Scheme Comparison', 'FAQ', 'Knowledge Base', 'Webinars'];
+const quickLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Services', href: '/services' },
+  { label: 'Contact', href: '/contact' },
+];
+const serviceLinks = [
+  { label: 'Business Loan', href: '/services/business-loan' },
+  { label: 'MSME Funding', href: '/services/msme-funding' },
+  { label: 'Startup Seed Fund', href: '/services/startup-seed-fund' },
+  { label: 'CGTMSE', href: '/services/cgtmse' },
+  { label: 'PMEGP', href: '/services/pmegp' },
+  { label: 'DPIIT Registration', href: '/services/dpiit-registration' },
+];
+const resourceLinks = [
+  { label: 'Working Capital', href: '/services/working-capital' },
+  { label: 'Venture Capital', href: '/services/venture-capital' },
+  { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: 'Terms of Service', href: '/terms-of-service' },
+  { label: 'Refund Policy', href: '/refund-policy' },
+];
 
 export default function Footer() {
   return (
@@ -16,14 +34,14 @@ export default function Footer() {
             <div className="lg:col-span-2 space-y-4">
               <div className="flex items-center gap-2">
                 <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary-500 to-primary-400 flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">FB</span>
+                  <span className="text-white font-bold text-sm">SS</span>
                 </div>
                 <span className="font-bold text-xl text-white">
-                  Fund<span className="text-primary-400">Bridge</span>
+                  Startup<span className="text-primary-400"> Support</span>
                 </span>
               </div>
               <p className="text-sm text-gray-400 max-w-sm">
-                India&apos;s most trusted business funding consultancy. Helping entrepreneurs access the right capital through expert guidance and government schemes.
+                India&apos;s most trusted business funding consultancy. Helping entrepreneurs access the right capital through expert guidance and government schemes. Startup Support Advisory — your growth partner.
               </p>
               <div className="space-y-2 text-sm">
                 <div className="flex items-center gap-2">
@@ -36,7 +54,7 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-primary-400" />
-                  <span>hello@fundbridge.in</span>
+                  <span>info@startupsupport.in</span>
                 </div>
               </div>
             </div>
@@ -46,8 +64,8 @@ export default function Footer() {
               <h4 className="font-bold text-white mb-4">Quick Links</h4>
               <ul className="space-y-2">
                 {quickLinks.map((link) => (
-                  <li key={link}>
-                    <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">{link}</a>
+                  <li key={link.label}>
+                    <a href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors">{link.label}</a>
                   </li>
                 ))}
               </ul>
@@ -58,20 +76,20 @@ export default function Footer() {
               <h4 className="font-bold text-white mb-4">Our Services</h4>
               <ul className="space-y-2">
                 {serviceLinks.map((link) => (
-                  <li key={link}>
-                    <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">{link}</a>
+                  <li key={link.label}>
+                    <a href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors">{link.label}</a>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Resources */}
+            {/* More Links */}
             <div>
-              <h4 className="font-bold text-white mb-4">Resources</h4>
+              <h4 className="font-bold text-white mb-4">More</h4>
               <ul className="space-y-2">
                 {resourceLinks.map((link) => (
-                  <li key={link}>
-                    <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">{link}</a>
+                  <li key={link.label}>
+                    <a href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors">{link.label}</a>
                   </li>
                 ))}
               </ul>
@@ -81,7 +99,7 @@ export default function Footer() {
           {/* Disclaimer */}
           <div className="mt-10 p-4 rounded-xl bg-white/5 border border-white/10">
             <p className="text-xs text-gray-500">
-              <strong className="text-gray-400">Disclaimer:</strong> FundBridge India is a funding consultancy and advisory service. We do not directly provide loans or financial products. All funding is subject to eligibility criteria set by respective banks, NBFCs, and government agencies. Results may vary based on individual profiles and market conditions.
+              <strong className="text-gray-400">Disclaimer:</strong> Startup Support Advisory is a funding consultancy and advisory service. We do not directly provide loans or financial products. All funding is subject to eligibility criteria set by respective banks, NBFCs, and government agencies. Results may vary based on individual profiles and market conditions.
             </p>
           </div>
 
@@ -100,11 +118,11 @@ export default function Footer() {
 
           {/* Bottom bar */}
           <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-gray-500">© 2024 FundBridge India. All rights reserved.</p>
+            <p className="text-xs text-gray-500">© 2024 Startup Support Advisory. All rights reserved.</p>
             <div className="flex items-center gap-4 text-xs text-gray-500">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-white transition-colors">Refund Policy</a>
+              <a href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a>
+              <a href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</a>
+              <a href="/refund-policy" className="hover:text-white transition-colors">Refund Policy</a>
             </div>
           </div>
         </div>

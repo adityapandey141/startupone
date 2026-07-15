@@ -5,11 +5,10 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { MessageCircle, ChevronDown, Menu, X, ArrowRight } from 'lucide-react';
 
 const navLinks = [
-  { label: 'Home', href: '#' },
-  { label: 'Services', href: '#services', hasDropdown: true },
-  { label: 'Success Stories', href: '#success' },
-  { label: 'About Us', href: '#about' },
-  { label: 'Contact Us', href: '#contact' },
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services', hasDropdown: true },
+  { label: 'About Us', href: '/about' },
+  { label: 'Contact Us', href: '/contact' },
 ];
 
 export default function Header() {
@@ -34,12 +33,12 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2">
             <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary-600 to-primary-400 flex items-center justify-center">
-              <span className="text-white font-bold text-sm">FB</span>
+              <span className="text-white font-bold text-sm">SS</span>
             </div>
             <span className="font-bold text-xl text-gray-900">
-              Fund<span className="text-primary-600">Bridge</span>
+              Startup<span className="text-primary-600"> Support</span>
             </span>
           </a>
 
@@ -68,7 +67,7 @@ export default function Header() {
               <MessageCircle className="w-5 h-5 text-green-600" />
             </a>
             <a
-              href="#contact"
+              href="/contact"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold transition-all shadow-md hover:shadow-lg"
             >
               Get Started <ArrowRight className="w-4 h-4" />
@@ -105,7 +104,7 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="#contact"
+              href="/contact"
               className="block text-center px-5 py-3 rounded-full bg-primary-600 text-white font-semibold"
               onClick={() => setMobileOpen(false)}
             >

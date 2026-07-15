@@ -1,4 +1,3 @@
-import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import VideoTestimonials from '@/components/VideoTestimonials';
 import LocalFunding from '@/components/LocalFunding';
@@ -15,31 +14,26 @@ import DPIITBanner from '@/components/DPIITBanner';
 import SixReasons from '@/components/SixReasons';
 import ContactCTA from '@/components/ContactCTA';
 import Newsletter from '@/components/Newsletter';
-import Footer from '@/components/Footer';
 
 export default function HomePage() {
   return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <VideoTestimonials />
-        <LocalFunding />
-        <FundingTypes />
-        <GradientCTA />
-        <Eligibility />
-        <FiveStepJourney />
-        <FundingSchemes />
-        <StartupSeedFund />
-        <StatsStrip />
-        <WhatYouGet />
-        <FundingLifecycle />
-        <DPIITBanner />
-        <SixReasons />
-        <ContactCTA />
-        <Newsletter />
-      </main>
-      <Footer />
-    </>
+    <main>
+      <Hero />
+      <VideoTestimonials />
+      <LocalFunding />
+      <FundingTypes />
+      <GradientCTA />
+      <Eligibility />
+      <FiveStepJourney />
+      <FundingSchemes />
+      <StartupSeedFund />
+      <StatsStrip />
+      <WhatYouGet />
+      <FundingLifecycle />
+      <DPIITBanner />
+      <SixReasons />
+      <ContactCTA />
+      <Newsletter />
+    </main>
   );
 }

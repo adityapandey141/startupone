@@ -17,8 +17,13 @@ const trustLabels = [
 ];
 
 const popularServices = [
-  'Business Loan', 'MSME Funding', 'Startup Seed Fund', 'CGTMSE Loan',
-  'Venture Capital', 'PMEGP Scheme', 'Working Capital',
+  { label: 'Business Loan', href: '/services/business-loan' },
+  { label: 'MSME Funding', href: '/services/msme-funding' },
+  { label: 'Startup Seed Fund', href: '/services/startup-seed-fund' },
+  { label: 'CGTMSE Loan', href: '/services/cgtmse' },
+  { label: 'Venture Capital', href: '/services/venture-capital' },
+  { label: 'PMEGP Scheme', href: '/services/pmegp' },
+  { label: 'Working Capital', href: '/services/working-capital' },
 ];
 
 export default function Hero() {
@@ -58,12 +63,16 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <FadeUp custom={3} className="flex flex-wrap gap-3">
-              <ButtonMotion className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary-600 hover:bg-primary-700 text-white font-semibold shadow-lg">
-                Get Funding Fast <ArrowRight className="w-4 h-4" />
-              </ButtonMotion>
-              <ButtonMotion className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-gray-200 hover:border-primary-300 text-gray-700 font-semibold bg-white">
-                Explore Services
-              </ButtonMotion>
+              <a href="/contact">
+                <ButtonMotion className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary-600 hover:bg-primary-700 text-white font-semibold shadow-lg">
+                  Get Funding Fast <ArrowRight className="w-4 h-4" />
+                </ButtonMotion>
+              </a>
+              <a href="/services">
+                <ButtonMotion className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-gray-200 hover:border-primary-300 text-gray-700 font-semibold bg-white">
+                  Explore Services
+                </ButtonMotion>
+              </a>
             </FadeUp>
 
             {/* Trust micro-labels */}
@@ -104,11 +113,11 @@ export default function Hero() {
             </span>
             {popularServices.map((service) => (
               <a
-                key={service}
-                href="#services"
+                key={service.label}
+                href={service.href}
                 className="px-4 py-2 rounded-full bg-white border border-gray-200 text-sm text-gray-600 hover:border-primary-300 hover:text-primary-600 transition-colors shadow-sm"
               >
-                {service}
+                {service.label}
               </a>
             ))}
           </div>
